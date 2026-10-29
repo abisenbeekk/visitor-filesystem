@@ -20,6 +20,10 @@ public class Main {
         root.add(src);
         root.add(new File("readme.md", 300));
 
+        System.out.println("=== Tree ===");
+        root.accept(new PrintTreeVisitor());
+        System.out.println();
+
         SizeCalculatorVisitor sizeVisitor = new SizeCalculatorVisitor();
         root.accept(sizeVisitor);
         System.out.println("=== Total size ===");
